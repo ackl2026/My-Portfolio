@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investment Philosophy</title>
     <style>
-        /* --- Professional Styling --- */
+        /* --- Basic Body and Font Styling --- */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.7;
@@ -15,6 +15,49 @@
             padding: 0;
         }
 
+        /* --- Tab Navigation Styling --- */
+        .tab-navigation {
+            width: 100%;
+            background-color: #ffffff; /* Clean white background for nav */
+            border-bottom: 1px solid #ddd;
+            overflow: hidden; /* Clear floats */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* Style for the navigation buttons */
+        .tab-navigation button {
+            background-color: inherit; /* Inherit white background */
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 16px 24px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #555;
+            transition: color 0.3s, border-bottom 0.3s;
+            border-bottom: 3px solid transparent; /* Placeholder for active state */
+        }
+
+        /* Change color on hover (but not for the active tab) */
+        .tab-navigation button:hover:not(.active) {
+            color: #000;
+        }
+
+        /* Style for the active tab */
+        .tab-navigation button.active {
+            color: #2c3e50; /* Professional blue */
+            font-weight: 600;
+            border-bottom: 3px solid #2c3e50;
+        }
+
+        /* --- Content Styling --- */
+
+        /* Wrapper for all page content, hidden by default */
+        .page-content {
+            display: none;
+        }
+        
         /* Wraps the content for better centering and spacing */
         .container {
             max-width: 800px;
@@ -62,28 +105,71 @@
 </head>
 <body>
 
-    <div class="container">
-
-        <h2>Investment Philosophy</h2>
-        <p>
-            Buying and holding for the long term (5-10 years). Good compounding businesses with wide moat or highly difficult to be replaced. Never buy out of FOMO or follow the herd mentality. To be disciplined and unemotional towards overall market sentiment as long as fundamentals of the business are intact.
-        </p>
-
-        <h2>Stock Selection</h2>
-        <ul>
-            <li>Monopolistic</li>
-            <li>Have Pricing Power</li>
-            <li>Has Operating Leverage</li>
-            <li>Has Organic Growth</li>
-            <li>Good Management</li>
-        </ul>
-
-        <h2>How Portfolio is Managed</h2>
-        <p>
-            Buy when good businesses selected are trading at an extreme discount or below fair value. Do not sacrifice the quality of the business for any low valuations. Sell only when we made a mistake on the initial thesis or when there is a better business with higher return with lower downside compared to the ones in holding.
-        </p>
-
+    <div class="tab-navigation">
+        <button class="tab-link active" onclick="showPage('homePage', this)">Home</button>
+        <button class="tab-link" onclick="showPage('page1', this)">Test Page 1</button>
+        <button class="tab-link" onclick="showPage('page2', this)">Test Page 2</button>
     </div>
+
+    <div id="homePage" class="page-content" style="display:block;">
+        <div class="container">
+            <h2>Investment Philosophy</h2>
+            <p>
+                Buying and holding for the long term (5-10 years). Good compounding businesses with wide moat or highly difficult to be replaced. Never buy out of FOMO or follow the herd mentality. To be disciplined and unemotional towards overall market sentiment as long as fundamentals of the business are intact.
+            </p>
+
+            <h2>Stock Selection</h2>
+            <ul>
+                <li>Monopolistic</li>
+                <li>Have Pricing Power</li>
+                <li>Has Operating Leverage</li>
+                <li>Has Organic Growth</li>
+                <li>Good Management</li>
+            </ul>
+
+            <h2>How Portfolio is Managed</h2>
+            <p>
+                Buy when good businesses selected are trading at an extreme discount or below fair value. Do not sacrifice the quality of the business for any low valuations. Sell only when we made a mistake on the initial thesis or when there is a better business with higher return with lower downside compared to the ones in holding.
+            </p>
+        </div>
+    </div>
+
+    <div id="page1" class="page-content">
+        <div class="container">
+            <h2>Test Page 1</h2>
+            <p>This is the test content for the first page.</p>
+        </div>
+    </div>
+
+    <div id="page2" class="page-content">
+        <div class="container">
+            <h2>Test Page 2</h2>
+            <p>This is the test content for the second page.</p>
+        </div>
+    </div>
+
+
+    <script>
+        function showPage(pageId, element) {
+            // 1. Hide all elements with class="page-content"
+            var allPages = document.getElementsByClassName("page-content");
+            for (var i = 0; i < allPages.length; i++) {
+                allPages[i].style.display = "none";
+            }
+
+            // 2. Remove "active" class from all tab buttons
+            var allTabs = document.getElementsByClassName("tab-link");
+            for (var i = 0; i < allTabs.length; i++) {
+                allTabs[i].className = allTabs[i].className.replace(" active", "");
+            }
+
+            // 3. Show the specific page content
+            document.getElementById(pageId).style.display = "block";
+
+            // 4. Add the "active" class to the button that was clicked
+            element.className += " active";
+        }
+    </script>
 
 </body>
 </html>

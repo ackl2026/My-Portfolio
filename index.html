@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investment Philosophy</title>
+    <title>Investment Portfolio</title>
     <style>
         /* --- Basic Body and Font Styling --- */
         body {
@@ -78,11 +78,6 @@
             margin-bottom: 20px;
         }
 
-        /* Space out the sections */
-        h2:not(:first-of-type) {
-            margin-top: 40px;
-        }
-
         /* Styles for paragraphs */
         p {
             font-size: 1rem; /* 16px */
@@ -101,14 +96,69 @@
             color: #555;
             margin-bottom: 10px; /* Adds spacing between list items */
         }
+
+        /* --- New Styles for Company Profiles --- */
+        .company-profile {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 30px;
+            background-color: #fdfdfd; /* Slightly off-white */
+        }
+
+        .company-profile h3 {
+            font-size: 1.5rem; /* 24px */
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .company-profile h4 {
+            font-size: 1.15rem; /* 18px */
+            color: #34495e; /* Slightly lighter blue */
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        /* Style for the key figures table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .data-table th, .data-table td {
+            border: 1px solid #ddd;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        .data-table th {
+            background-color: #f4f4f4;
+            font-weight: 600;
+        }
+        
+        /* Using a monospaced font for numbers makes them align better */
+        .data-table td:not(:first-child) {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+        }
+        
+        .placeholder-text {
+            color: #888;
+            font-style: italic;
+        }
+
     </style>
 </head>
 <body>
 
     <div class="tab-navigation">
         <button class="tab-link active" onclick="showPage('homePage', this)">Home</button>
-        <button class="tab-link" onclick="showPage('page1', this)">Test Page 1</button>
-        <button class="tab-link" onclick="showPage('page2', this)">Test Page 2</button>
+        <button class="tab-link" onclick="showPage('pageREITs', this)">REITs & Trusts</button>
+        <button class="tab-link" onclick="showPage('pageCompanies', this)">Global Companies</button>
     </div>
 
     <div id="homePage" class="page-content" style="display:block;">
@@ -134,42 +184,87 @@
         </div>
     </div>
 
-    <div id="page1" class="page-content">
+    <div id="pageREITs" class="page-content">
         <div class="container">
-            <h2>Test Page 1</h2>
-            <p>This is the test content for the first page.</p>
-        </div>
-    </div>
+            
+            <div class="company-profile">
+                <h3>Mapletree Logistics Trust (M44U)</h3>
+                <h4>Investment Thesis</h4>
+                <ul>
+                    <li>The revenue is diversified throughout multiple regions.</li>
+                    <li>Gross revenue & Net Property Income has been slightly stagnant due to macro headwind (I.E. Interest Rates and the Economy in China).</li>
+                    <li>The management team has managed to divest assets at higher valuation and also actively acquire assets.</li>
+                    <li>As of June 30 2024, debt maturity for FY24/25 is at $197M which is only 3%. It is favorable as interest rates will be coming down based on current news as of 29 July 2024.</li>
+                    <li>83% Debt are hedged at fixed interest rates.</li>
+                </ul>
+                
+                <h4>Risk and Opportunities</h4>
+                <ul>
+                    <li>(Risk) Management has highlighted that the current China Economy is not doing too well and there is oversupply of Logistics space in China, therefore rental revisions and income generated will be on the downtrend.</li>
+                    <li>(Opportunity) DPU is expected to be lower, however the current share price has dipped and is now sitting at a 6.77% dividend yield.</li>
+                    <li>(Risk) The REIT might not do as well as compared to other REITs to consider such as Capitaland Acendas REIT.</li>
+                    <li>(Opportunity) As a long term investor, buying at the current level looks good as long as the management continues to focus on portfolio rejuvanation and prudent capital management.</li>
+                </ul>
 
-    <div id="page2" class="page-content">
-        <div class="container">
-            <h2>Test Page 2</h2>
-            <p>This is the test content for the second page.</p>
-        </div>
-    </div>
+                <h4>Key Figures (Fiscal Year Ends on March)</h4>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>2021</th>
+                            <th>2022</th>
+                            <th>2023</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gross Revenue (Millions)</td>
+                            <td>678.6</td>
+                            <td>730.6</td>
+                            <td>733.9</td>
+                        </tr>
+                        <tr>
+                            <td>Net Property Income (Millions)</td>
+                            <td>592.1</td>
+                            <td>634.8</td>
+                            <td>634.9</td>
+                        </tr>
+                        <tr>
+                            <td>Portfolio Occupancy</td>
+                            <td>0.967</td>
+                            <td>0.97</td>
+                            <td>0.96</td>
+                        </tr>
+                        <tr>
+                            <td>Leverage Ratio</td>
+                            <td>0.368</td>
+                            <td>0.368</td>
+                            <td>0.389</td>
+                        </tr>
+                        <tr>
+                            <td>Average Debt Maturity</td>
+                            <td>3.8 Years</td>
+                            <td>3.8 Years</td>
+                            <td>3.8 Years</td>
+                        </tr>
+                        <tr>
+                            <td>Weighted Average Lease Expiry</td>
+                            <td>3.5 Years</td>
+                            <td>3.1 Years</td>
+                            <td>3 Years</td>
+                        </tr>
+                        <tr>
+                            <td>Distribution Per Unit (Cents)</td>
+                            <td>8.787</td>
+                            <td>9.011</td>
+                            <td>9.003</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-
-    <script>
-        function showPage(pageId, element) {
-            // 1. Hide all elements with class="page-content"
-            var allPages = document.getElementsByClassName("page-content");
-            for (var i = 0; i < allPages.length; i++) {
-                allPages[i].style.display = "none";
-            }
-
-            // 2. Remove "active" class from all tab buttons
-            var allTabs = document.getElementsByClassName("tab-link");
-            for (var i = 0; i < allTabs.length; i++) {
-                allTabs[i].className = allTabs[i].className.replace(" active", "");
-            }
-
-            // 3. Show the specific page content
-            document.getElementById(pageId).style.display = "block";
-
-            // 4. Add the "active" class to the button that was clicked
-            element.className += " active";
-        }
-    </script>
-
-</body>
-</html>
+            <div class="company-profile">
+                <h3>Capitaland Integrated Commercial Trust (CICT)</h3>
+                <h4>Investment Thesis</h4>
+                <ul>
+                    <li>Most of the properties owned is in Singapore therefore the command of revenue is higher due to limited space singapore
